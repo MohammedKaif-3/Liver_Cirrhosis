@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Prediction Result - HepaCheck{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/results.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="result-container">
+    <div class="result-card {% if prediction == 1 %}positive{% else %}negative{% endif %}">
+        <h1><i class="fa-solid fa-circle-check"></i> Prediction Result</h1>
+        <p class="prediction-label">
+            {% if prediction == 1 %}
+                <strong>⚠️ High Risk of Liver Cirrhosis Detected</strong>
+            {% else %}
+                ✅ <strong>No Immediate Risk of Cirrhosis Detected</strong>
+            {% endif %}
+        </p>
+        <p class="confidence-msg">This prediction is based on clinical input values you provided.</p>
+        <a href="{{ url_for('predict') }}" class="btn btn-secondary">Check Again</a>
+    </div>
+</div>
+{% endblock %}

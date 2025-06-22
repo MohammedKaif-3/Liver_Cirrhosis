@@ -1,0 +1,51 @@
+.predict-form {
+    margin-top: 40px;
+    width: 100%;
+}
+
+/* === GRID LAYOUT === */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+/* === FORM GROUP === */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* === LABEL === */
+.form-group label {
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* === INPUT FIELD === */
+.form-group input {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border 0.25s, box-shadow 0.25s;
+    outline: none;
+    background-color: #fff;
+}
+
+/* === FOCUS EFFECT === */
+.form-group input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+/* === RESPONSIVE FORM GRID === */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
