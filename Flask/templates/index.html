@@ -1,15 +1,78 @@
 {% extends "base.html" %}
 
-{% block title %}Home - HepaCheck{% endblock %}
+{% block title %}HepaCheck - Liver Cirrhosis Predictor{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/index.css') }}">
 {% endblock %}
 
 {% block content %}
-    <div class="card">
+    <div class="home-hero">
+        <div class="card">
         <h1><i class="fa-solid fa-stethoscope"></i> Liver Cirrhosis Predictor</h1>
         <p>Get an instant prediction about your liver health based on clinical data using our AI-powered tool.</p>
-        <a href="/predict" class="btn">Check Now</a>
+        <a href="/predict" class="btn">Predict Now</a>
     </div>
+    </div>
+
+    <section id="about-cirrhosis" class="info-section">
+  <div class="info-container">
+    <h2>What is Liver Cirrhosis?</h2>
+    <p>
+      Liver cirrhosis is a progressive condition where normal liver tissue is replaced by scar tissue, affecting liver function. It often results from long-term liver damage due to alcohol, hepatitis, or other chronic liver diseases.
+    </p>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <h3><i class="fa-solid fa-triangle-exclamation"></i> Symptoms</h3>
+        <ul>
+          <li>Fatigue, weakness</li>
+          <li>Yellowing of skin (jaundice)</li>
+          <li>Abdominal swelling</li>
+          <li>Loss of appetite</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3><i class="fa-solid fa-virus-slash"></i> Causes</h3>
+        <ul>
+          <li>Chronic alcohol abuse</li>
+          <li>Hepatitis B or C infection</li>
+          <li>Non-alcoholic fatty liver disease</li>
+          <li>Autoimmune liver diseases</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h3><i class="fa-solid fa-heart-pulse"></i> Prevention</h3>
+        <ul>
+          <li>Limit alcohol intake</li>
+          <li>Maintain a healthy weight</li>
+          <li>Vaccinate against hepatitis</li>
+          <li>Routine liver checkups</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <div class="features-section">
+  <h2>Why Choose HepaCheck?</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <i class="fa-solid fa-brain"></i>
+      <h3>Smart Predictions</h3>
+      <p>Powered by AI trained on real medical data to detect cirrhosis patterns accurately.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fa-solid fa-heart-pulse"></i>
+      <h3>Medical Grade Inputs</h3>
+      <p>Uses detailed clinical metrics that align with healthcare standards.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fa-solid fa-lock"></i>
+      <h3>Privacy Respect</h3>
+      <p>No input is stored — all predictions are processed securely and instantly.</p>
+    </div>
+  </div>
+  
 {% endblock %}

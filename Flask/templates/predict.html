@@ -14,116 +14,176 @@
         <div class="form-grid">
         <!-- Grouped inputs with proper types and min/max -->
         <div class="form-group">
-            <label>Total Bilirubin (mg/dl)</label>
-            <input type="number" step="0.1" name="total_bilirubin_mg_dl" required min="0">
-        </div>
+    <label>
+        Total Bilirubin (mg/dl)
+        <span class="info-icon" data-tooltip="Total amount of bilirubin in the blood. Used to assess liver function.">?</span>
+    </label>
+    <input type="number" step="0.1" name="total_bilirubin_mg_dl" required min="0">
+</div>
 
-        <div class="form-group">
-            <label>Duration of alcohol consumption (years)</label>
-            <input type="number" name="duration_of_alcohol_consumption_years" required min="0" max="50">
-        </div>
+<div class="form-group">
+    <label>
+        Duration of alcohol consumption (years)
+        <span class="info-icon" data-tooltip="Number of years the patient has been consuming alcohol.">?</span>
+    </label>
+    <input type="number" name="duration_of_alcohol_consumption_years" required min="0" max="50">
+</div>
 
-        <div class="form-group">
-            <label>Direct (mg/dl)</label>
-            <input type="number" step="0.1" name="direct_mg_dl" required min="0">
-        </div>
+<div class="form-group">
+    <label>
+        Direct (mg/dl)
+        <span class="info-icon" data-tooltip="Direct (conjugated) bilirubin level in the blood.">?</span>
+    </label>
+    <input type="number" step="0.1" name="direct_mg_dl" required min="0">
+</div>
 
-        <div class="form-group">
-            <label>AL.Phosphatase (U/L)</label>
-            <input type="number" name="al_phosphatase_u_l" required min="0" max="1000">
-        </div>
+<div class="form-group">
+    <label>
+        AL.Phosphatase (U/L)
+        <span class="info-icon" data-tooltip="Alkaline phosphatase enzyme level. Indicates bile duct or liver issues.">?</span>
+    </label>
+    <input type="number" name="al_phosphatase_u_l" required min="0" max="1000">
+</div>
 
-        <div class="form-group">
-            <label>Platelet Count (lakhs/mm³)</label>
-            <input type="number" step="0.1" name="platelet_count_lakhs_mm" required min="0.5" max="6">
-        </div>
+<div class="form-group">
+    <label>
+        Platelet Count (lakhs/mm³)
+        <span class="info-icon" data-tooltip="Platelet count in blood, measured in lakhs per cubic mm. Normal: 1.5–4.5.">?</span>
+    </label>
+    <input type="number" step="0.1" name="platelet_count_lakhs_mm" required min="0.5" max="6">
+</div>
 
-        <div class="form-group">
-            <label>Indirect (mg/dl)</label>
-            <input type="number" step="0.1" name="indirect_mg_dl" required min="0">
-        </div>
+<div class="form-group">
+    <label>
+        Indirect (mg/dl)
+        <span class="info-icon" data-tooltip="Indirect (unconjugated) bilirubin level in blood.">?</span>
+    </label>
+    <input type="number" step="0.1" name="indirect_mg_dl" required min="0">
+</div>
 
-        <div class="form-group">
-            <label>Polymorphs (%)</label>
-            <input type="number" name="polymorphs_percent" required min="0" max="100">
-        </div>
+<div class="form-group">
+    <label>
+        Polymorphs (%)
+        <span class="info-icon" data-tooltip="Percentage of polymorphonuclear leukocytes (white blood cells).">?</span>
+    </label>
+    <input type="number" name="polymorphs_percent" required min="0" max="100">
+</div>
 
-        <div class="form-group">
-            <label>Albumin (g/dl)</label>
-            <input type="number" step="0.1" name="albumin_g_dl" required min="0">
-        </div>
+<div class="form-group">
+    <label>
+        Albumin (g/dl)
+        <span class="info-icon" data-tooltip="Protein made by the liver. Low levels indicate liver or kidney issues.">?</span>
+    </label>
+    <input type="number" step="0.1" name="albumin_g_dl" required min="0">
+</div>
 
-        <div class="form-group">
-            <label>PCV (%)</label>
-            <input type="number" name="pcv_percent" required min="0" max="100">
-        </div>
+<div class="form-group">
+    <label>
+        PCV (%)
+        <span class="info-icon" data-tooltip="Packed Cell Volume: % of red blood cells in blood. Normal: 35–50%.">?</span>
+    </label>
+    <input type="number" name="pcv_percent" required min="0" max="100">
+</div>
 
-        <div class="form-group">
-            <label>SGOT/AST (U/L)</label>
-            <input type="number" name="sgot_ast_u_l" required min="0">
-        </div>
+<div class="form-group">
+    <label>
+        SGOT/AST (U/L)
+        <span class="info-icon" data-tooltip="An enzyme related to liver function. High levels suggest liver damage.">?</span>
+    </label>
+    <input type="number" name="sgot_ast_u_l" required min="0">
+</div>
 
-        <div class="form-group">
-            <label>Lymphocytes (%)</label>
-            <input type="number" name="lymphocytes_percent" required min="0" max="100">
-        </div>
+<div class="form-group">
+    <label>
+        Lymphocytes (%)
+        <span class="info-icon" data-tooltip="Percentage of lymphocytes in white blood cells.">?</span>
+    </label>
+    <input type="number" name="lymphocytes_percent" required min="0" max="100">
+</div>
 
-        <div class="form-group">
-            <label>Age</label>
-            <input type="number" name="age" required min="0" max="120">
-        </div>
+<div class="form-group">
+    <label>
+        Age
+        <span class="info-icon" data-tooltip="Enter the patient's age in years.">?</span>
+    </label>
+    <input type="number" name="age" required min="0" max="120">
+</div>
 
-        <div class="form-group">
-            <label>Monocytes (%)</label>
-            <input type="number" name="monocytes_percent" required min="0" max="100">
-        </div>
+<div class="form-group">
+    <label>
+        Monocytes (%)
+        <span class="info-icon" data-tooltip="Monocytes are a type of white blood cell. Enter percentage.">?</span>
+    </label>
+    <input type="number" name="monocytes_percent" required min="0" max="100">
+</div>
 
-        <div class="form-group">
-            <label>BP Systolic</label>
-            <input type="number" name="bp_systolic" required min="50" max="250">
-        </div>
+<div class="form-group">
+    <label>
+        BP Systolic
+        <span class="info-icon" data-tooltip="Systolic blood pressure (upper value). Normal range: 90–120.">?</span>
+    </label>
+    <input type="number" name="bp_systolic" required min="50" max="250">
+</div>
 
-        <div class="form-group">
-            <label>Hemoglobin (g/dl)</label>
-            <input type="number" step="0.1" name="hemoglobin_g_dl" required min="0">
-        </div>
+<div class="form-group">
+    <label>
+        Hemoglobin (g/dl)
+        <span class="info-icon" data-tooltip="Hemoglobin level indicates oxygen-carrying capacity of the blood.">?</span>
+    </label>
+    <input type="number" step="0.1" name="hemoglobin_g_dl" required min="0">
+</div>
 
-        <div class="form-group">
-            <label>Quantity of alcohol (quarters/day)</label>
-            <input type="number" name="quantity_of_alcohol_consumption_quarters_day" required min="0" max="10">
-        </div>
+<div class="form-group">
+    <label>
+        Quantity of alcohol (quarters/day)
+        <span class="info-icon" data-tooltip="Average daily alcohol consumption in quarters (1 quarter = ~180ml).">?</span>
+    </label>
+    <input type="number" name="quantity_of_alcohol_consumption_quarters_day" required min="0" max="10">
+</div>
 
-        <div class="form-group">
-            <label>Diabetes Result</label>
-            <select name="diabetes_result" required>
-                <option value="">--Select--</option>
-                <option value="Positive">Positive</option>
-                <option value="Negative">Negative</option>
-            </select>
-        </div>
+<div class="form-group">
+    <label>
+        Diabetes Result
+        <span class="info-icon" data-tooltip="Indicates if the patient has been diagnosed with diabetes.">?</span>
+    </label>
+    <select name="diabetes_result" required>
+        <option value="">--Select--</option>
+        <option value="Positive">Positive</option>
+        <option value="Negative">Negative</option>
+    </select>
+</div>
 
-        <div class="form-group">
-            <label>Total Protein (g/dl)</label>
-            <input type="number" step="0.1" name="total_protein_g_dl" required min="0">
-        </div>
+<div class="form-group">
+    <label>
+        Total Protein (g/dl)
+        <span class="info-icon" data-tooltip="Sum of all proteins in blood including albumin and globulin.">?</span>
+    </label>
+    <input type="number" step="0.1" name="total_protein_g_dl" required min="0">
+</div>
 
-        <div class="form-group">
-            <label>SGPT/ALT (U/L)</label>
-            <input type="number" name="sgpt_alt_u_l" required min="0">
-        </div>
+<div class="form-group">
+    <label>
+        SGPT/ALT (U/L)
+        <span class="info-icon" data-tooltip="An enzyme found in the liver. High levels suggest liver damage.">?</span>
+    </label>
+    <input type="number" name="sgpt_alt_u_l" required min="0">
+</div>
 
-        <div class="form-group">
-            <label>Globulin (g/dl)</label>
-            <input type="number" step="0.1" name="globulin_g_dl" required min="0">
-        </div>
-    
+<div class="form-group">
+    <label>
+        Globulin (g/dl)
+        <span class="info-icon" data-tooltip="Group of proteins in blood. Includes antibodies.">?</span>
+    </label>
+    <input type="number" step="0.1" name="globulin_g_dl" required min="0">
+</div>
 
-    <div style="text-align: center; margin-top: 20px;">
+
+
+        </div>
+        <div class="btns">
         <button type="submit" class="btn">Predict Now</button>
-        <button type="button" class="btn" style="background-color: #2196F3;" onclick="fillDemo()">Auto-Fill Demo</button>
+        <button type="button" class="btn" style="background-color: transparent; color: black; border: 1px solid black" onclick="fillDemo()">Auto-Fill Demo</button>
     </div>
-</form>
-
-        </div>
+    </form>
     </div>
 {% endblock %}

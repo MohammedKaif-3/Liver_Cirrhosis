@@ -8,17 +8,66 @@
 
 {% block content %}
 <div class="result-container">
-    <div class="result-card {% if prediction == 1 %}positive{% else %}negative{% endif %}">
-        <h1><i class="fa-solid fa-circle-check"></i> Prediction Result</h1>
-        <p class="prediction-label">
-            {% if prediction == 1 %}
-                <strong>⚠️ High Risk of Liver Cirrhosis Detected</strong>
-            {% else %}
-                ✅ <strong>No Immediate Risk of Cirrhosis Detected</strong>
-            {% endif %}
-        </p>
-        <p class="confidence-msg">This prediction is based on clinical input values you provided.</p>
-        <a href="{{ url_for('predict') }}" class="btn btn-secondary">Check Again</a>
+    <div class="result-wrapper {% if prediction == 1 %}positive{% else %}negative{% endif %}">
+        
+        <!-- Header with Icon and Summary -->
+        <div class="result-header">
+            <div class="status-text">
+                <h2><i class="fa-solid fa-shield-halved"></i> Prediction Result</h2>
+                <p class="status-label">
+                    {% if prediction == 1 %}
+                        <i class="fa-solid fa-triangle-exclamation"></i> <strong>High Risk of Liver Cirrhosis Detected</strong>
+                    {% else %}
+                         <strong>No Immediate Risk of Cirrhosis Detected</strong>
+                    {% endif %}
+                </p>
+                <p class="confidence-score">
+                    Confidence Score: <strong>{{ confidence_score }}%</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- Explanation Section -->
+        <div class="result-section">
+            <h3>How to Interpret This Result</h3>
+            <p>
+                The prediction is based on clinical features you submitted. Our model analyzed the inputs using trained medical patterns to determine the likelihood of liver cirrhosis.
+            </p>
+            <ul>
+                <li><strong>High risk:</strong> Indicates significant indicators aligned with cirrhosis patterns. Further consultation is advised.</li>
+                <li><strong>No risk:</strong> Current indicators do not show warning signs. Maintain regular health checkups.</li>
+            </ul>
+        </div>
+
+        <!-- Confidence Details -->
+        <div class="result-section">
+            <h3>Confidence Score Explained</h3>
+            <p>
+                The model is <strong>{{ confidence_score }}%</strong> confident about this prediction based on your input data. While not a medical diagnosis, this score reflects strong predictive accuracy based on training data.
+            </p>
+        </div>
+
+        <div class="result-section">
+            <h3>Recommended Tips</h3>
+            <ul>
+                {% if prediction == 1 %}
+                <li>Consult a hepatologist for further tests and treatment.</li>
+                <li>Limit alcohol consumption strictly.</li>
+                <li>Maintain a liver-friendly diet (low fat, high fiber).</li>
+                <li>Get vaccinated for Hepatitis B (if not already).</li>
+                {% else %}
+                <li>Continue regular health screenings.</li>
+                <li>Stay hydrated and eat a balanced diet.</li>
+                <li>Avoid unnecessary medication and alcohol intake.</li>
+                {% endif %}
+            </ul>
+        </div>
+
+
+        <!-- Actions -->
+        <div class="action-btns">
+            <a href="{{ url_for('predict') }}" class="btn">Check Another Patient</a>
+        </div>
     </div>
 </div>
 {% endblock %}

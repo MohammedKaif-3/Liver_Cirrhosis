@@ -70,18 +70,19 @@ def predict():
             "Globulin (g/dl)": float(raw_data["globulin_g_dl"])
         }
 
-
         try:
              # Create DataFrame in correct order
             input_df = pd.DataFrame([cleaned_data])[FEATURE_ORDER]
 
             # Scale and predict
             scaled = scaler.transform(input_df)
+            # predict
+            probs = model.predict_proba(scaled)
             predict = model.predict(scaled)
+            confidence_score = round(probs[0][int(predict[0])] * 100)
 
-            print(predict)
 
-            return render_template("results.html", prediction=int(predict[0]))
+            return render_template("results.html", prediction=int(predict[0]), confidence_score=confidence_score)
 
         except KeyError as e:
             return f"Missing input: {e}", 400

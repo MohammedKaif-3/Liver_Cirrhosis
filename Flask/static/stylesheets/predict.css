@@ -1,3 +1,20 @@
+body {
+    background-color: #f4f7fa;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.card {
+    max-width: 80%;
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1.5s ease-in;
+}
+
+/* === FORM === */
 .predict-form {
     margin-top: 40px;
     width: 100%;
@@ -9,6 +26,7 @@
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 24px;
     margin-bottom: 32px;
+    animation: fadeIn 0.5s ease-in;
 }
 
 /* === FORM GROUP === */
@@ -28,24 +46,160 @@
 
 /* === INPUT FIELD === */
 .form-group input {
-    padding: 10px 12px;
+    padding: 12px 14px;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: 15px;
     transition: border 0.25s, box-shadow 0.25s;
     outline: none;
     background-color: #fff;
 }
 
-/* === FOCUS EFFECT === */
-.form-group input:focus {
-    border-color: #4CAF50;
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+/* === PLACEHOLDER STYLING === */
+.form-group input::placeholder {
+    color: #999;
+    font-style: italic;
 }
 
-/* === RESPONSIVE FORM GRID === */
+/* === ERROR STATE === */
+.form-group input.error {
+    border-color: #e53935;
+    box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.2);
+}
+
+/* === SELECT FIELD STYLING === */
+.form-group select {
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #fff;
+    transition: border 0.25s, box-shadow 0.25s;
+    outline: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='10' height='7' viewBox='0 0 10 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23333' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 10px;
+}
+
+/* === ERROR STATE FOR SELECT === */
+.form-group select.error {
+    border-color: #e53935;
+    box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.2);
+}
+
+/* === BUTTON GROUP === */
+.btns {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.info-icon {
+    display: inline-block;
+    margin-left: 6px;
+    width: 15px;
+    height: 15px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #333;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+}
+
+.info-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    width: 50vw;
+    padding: 8px 10px;
+    border-radius: 6px;
+    white-space: normal;
+    font-size: 12px;
+    line-height: 1.4;
+    max-width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+}
+
+.info-icon::before {
+    content: '';
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.info-icon:hover::after,
+.info-icon:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* === ANIMATION === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVENESS === */
 @media (max-width: 768px) {
+    .card {
+        padding: 30px 20px;
+    }
+
     .form-grid {
         grid-template-columns: 1fr;
+    }
+
+    .predict-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .btns {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 25px 15px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 14px;
+    }
+
+    .predict-btn {
+        font-size: 0.95rem;
+        padding: 10px 20px;
     }
 }
