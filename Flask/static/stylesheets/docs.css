@@ -1,0 +1,155 @@
+.docs-section {
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.docs-title {
+  font-size: 1.75rem;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #a2a9b1;
+  padding-bottom: 10px;
+}
+
+.docs-subtitle{
+    color: #333 !important;
+}
+
+.docs-intro {
+  font-size: 1rem;
+  color: #202122;
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.docs-block {
+  margin-bottom: 30px;
+}
+
+.docs-block h2 {
+  font-size: 1.3rem;
+  color: #000;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #c8ccd1;
+  padding-bottom: 4px;
+}
+
+.docs-block p,
+.docs-block ul {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #202122;
+  margin: 0 0 16px;
+}
+
+.docs-block ul {
+  padding-left: 30px;
+  list-style-type: disc;
+}
+
+.docs-block ul li {
+  margin-bottom: 6px;
+}
+
+/* Improve horizontal scrolling on very small screens */
+.chart-wrapper {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 500px;
+  min-height: 300px;
+}
+
+/* Ensure canvas resizes nicely */
+#featureChart {
+  width: 100% !important;
+  min-width: 600px;
+  height: auto !important;
+}
+
+/* Feature name text styling */
+#featureChart text {
+  font-size: 12px;
+  fill: #202122;
+}
+
+.action-btns {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.btn {
+  background-color: #3366cc;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #2a4e9c;
+}
+
+@media (max-width: 768px) {
+  .docs-title {
+    font-size: 1.5rem;
+  }
+
+  .docs-block h2 {
+    font-size: 1.15rem;
+  }
+
+  .docs-block p,
+  .docs-block ul {
+    font-size: 0.95rem;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .chart-wrapper {
+    max-height: 400px;
+  }
+
+  #featureChart text {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .docs-title {
+    font-size: 1.3rem;
+  }
+
+  .docs-block h2 {
+    font-size: 1rem;
+  }
+
+  .docs-block p,
+  .docs-block ul {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .chart-wrapper {
+    max-height: 300px;
+  }
+
+  #featureChart text {
+    font-size: 10px;
+  }
+}

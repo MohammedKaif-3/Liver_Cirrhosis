@@ -11,6 +11,8 @@
     <script src="https://kit.fontawesome.com/fef27cc1ae.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/base.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
     <title>{% block title %}HepaCheck{% endblock %}</title>
     {% block extra_css %}{% endblock %}
@@ -29,8 +31,9 @@
             </div>
             <nav class="nav-links" id="nav-links">
                 <a href="/">Home</a>
+                <a href="/#about-cirrhosis">About Cirrhosis</a>
+                <a href="/docs">Docs</a>
                 <a href="/predict">Predict</a>
-                <a href="#about">About</a>
             </nav>
         </header>
 
@@ -40,12 +43,13 @@
 
         <!-- FOOTER -->
         <footer class="site-footer">
-            <p>&copy; 2025 HepaCheck. All rights reserved.</p>
+            <p>Developed with <i class="fa-solid fa-heart"></i></p>
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/mohammedkaif003/"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="https://github.com/MohammedKaif-3"><i class="fa-brands fa-github"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/kaif_shaik_7_8_6/"><i class="fa-brands fa-instagram"></i></a>
             </div>
+            <p>&copy; 2025 HepaCheck. All rights reserved.</p>
         </footer>
 
     </div>

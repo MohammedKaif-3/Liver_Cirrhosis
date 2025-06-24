@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Documentation - HepaCheck{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/docs.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="docs-section">
+    <div class="container">
+        <h1 class="docs-title">Revolutionizing Liver Care with AI</h1>
+        <p class="docs-intro">
+            HepaCheck is a machine learning-powered system designed to assist in the early detection of liver cirrhosis using non-invasive clinical and laboratory data.
+        </p>
+
+        <div class="docs-block">
+            <h2 class="docs-subtitle">Problem Statement</h2>
+            <p>
+                Liver cirrhosis is a critical health condition that is often diagnosed at a late stage due to the invasive and time-consuming nature of traditional methods. This delays treatment and worsens outcomes. HepaCheck aims to transform liver disease diagnosis by offering fast, accessible, and non-invasive early prediction using AI.
+            </p>
+        </div>
+
+        <div class="docs-block">
+            <h2 class="docs-subtitle">Use Cases</h2>
+            <ul>
+                <li>Enable early, non-invasive diagnosis of liver cirrhosis by healthcare professionals</li>
+                <li>Support hospital systems to triage high-risk patients effectively</li>
+                <li>Integrate with telehealth platforms to offer remote liver health monitoring</li>
+            </ul>
+        </div>
+
+        <div class="docs-block">
+            <h2 class="docs-subtitle">How It Works</h2>
+            <p>
+                Users input basic clinical values into the prediction form. The system processes this data through a trained machine learning model which evaluates patterns indicative of cirrhosis. Results are displayed instantly with a confidence score, helping users make informed decisions or seek medical advice.
+            </p>
+        </div>
+
+        <div class="docs-block">
+  <h2 class="docs-subtitle">Model Documentation</h2>
+  <p>
+    The liver cirrhosis prediction model is a supervised machine learning classifier trained on clinical data. It takes multiple biomarkers and lifestyle features as input and predicts the likelihood of liver cirrhosis.
+  </p>
+
+  <h2 class="docs-subtitle">Model Type</h3>
+  <p>
+    We use a <strong>Random Forest Classifier</strong> due to its robustness, high accuracy, and ability to handle missing or imbalanced data.
+  </p>
+
+  <h2 class="docs-subtitle">Features Used</h3>
+  <ul>
+    <li>Total Bilirubin</li>
+    <li>Direct & Indirect Bilirubin</li>
+    <li>SGOT (AST), SGPT (ALT)</li>
+    <li>Albumin, Globulin, Total Protein</li>
+    <li>Platelet Count, PCV (%)</li>
+    <li>Alcohol consumption (duration & quantity)</li>
+    <li>Age, Diabetes status, Blood Pressure</li>
+  </ul>
+
+  <div class="docs-block">
+  <h2 class="docs-subtitle">Feature Importance</h2>
+  <p>The chart below visualizes how much each input feature contributed to the model's prediction.</p>
+  <div class="chart-wrapper">
+    <canvas id="featureChart" data-importance='{{ feature_data | safe }}'></canvas>
+  </div>
+</div>
+
+
+
+
+  <h2 class="docs-subtitle">Training Dataset</h3>
+  <p>
+    The model was trained on a cleaned and preprocessed dataset consisting of anonymized patient records. The dataset was balanced using SMOTE, and features were scaled using StandardScaler.
+  </p>
+
+  <h2 class="docs-subtitle">Limitations</h3>
+  <ul>
+    <li>This tool is not a replacement for clinical diagnosis.</li>
+    <li>The prediction may vary based on data quality or rare outliers.</li>
+    <li>Medical consultation is strongly recommended for confirmed results.</li>
+  </ul>
+</div>
+
+
+        <div class="action-btns">
+            <a href="{{ url_for('predict') }}" class="btn">Try Prediction</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

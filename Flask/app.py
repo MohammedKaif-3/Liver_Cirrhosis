@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import numpy as np
 import pandas as pd
 import joblib
+import json
 
 # Load scaler and model saved with joblib
 scaler = joblib.load('normalizer.pkl')
@@ -32,6 +33,8 @@ FEATURE_ORDER = [
     "Globulin (g/dl)"
 ]
 
+feature_names = FEATURE_ORDER
+feature_importances = model.feature_importances_.tolist()
 
 @app.route('/')
 def home():
@@ -90,6 +93,15 @@ def predict():
             return "Invalid input: All values must be numeric", 400
     
     return render_template("predict.html")
+
+
+@app.route('/docs')
+def docs():
+    return render_template("docs.html",  feature_data=json.dumps({
+            "labels": feature_names,
+            "values": feature_importances
+        }))
+
 
 if __name__ == "__main__":
     app.run(debug=True)

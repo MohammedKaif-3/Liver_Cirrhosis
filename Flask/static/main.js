@@ -54,3 +54,69 @@ function fillDemo() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const chartElement = document.getElementById("featureChart");
+
+  if (chartElement) {
+    const featureData = JSON.parse(chartElement.dataset.importance);
+
+    // Use 1-based index labels for the y-axis
+    const indexLabels = featureData.labels.map((_, i) => (i + 1).toString());
+
+    new Chart(chartElement, {
+      type: "bar",
+      data: {
+        labels: indexLabels,
+        datasets: [{
+          label: "Feature Importance",
+          data: featureData.values,
+          backgroundColor: "#3366cc"
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Importance Score'
+            },
+            ticks: {
+              font: {
+                size: 12
+              }
+            }
+          },
+          y: {
+            ticks: {
+              font: {
+                size: 12
+              }
+            },
+            title: {
+              display: true,
+              text: 'Feature Index'
+            }
+          }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              // Show full feature name in tooltip
+              title: (context) => {
+                const index = context[0].dataIndex;
+                return `(${index + 1}) ${featureData.labels[index]}`;
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+});
+
+
