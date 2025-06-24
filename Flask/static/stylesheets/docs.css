@@ -2,52 +2,54 @@
   padding: 40px 20px;
 }
 
-.container {
+.container2 {
   max-width: 960px;
   margin: auto;
   padding: 0 20px;
 }
 
 .docs-title {
-  font-size: 1.75rem;
+  font-size: 2rem;
   color: #000;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   border-bottom: 1px solid #a2a9b1;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
 }
 
-.docs-subtitle{
-    color: #333 !important;
+.docs-subtitle {
+  color: #333 !important;
 }
 
 .docs-intro {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #202122;
   margin-bottom: 30px;
-  line-height: 1.7;
+  line-height: 1.75;
+  text-align: justify;
 }
 
 .docs-block {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .docs-block h2 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: #000;
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   border-bottom: 1px solid #c8ccd1;
-  padding-bottom: 4px;
+  padding-bottom: 6px;
 }
 
 .docs-block p,
 .docs-block ul {
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.8;
   color: #202122;
-  margin: 0 0 16px;
+  margin-bottom: 16px;
+  text-align: justify;
 }
 
 .docs-block ul {
@@ -56,27 +58,39 @@
 }
 
 .docs-block ul li {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
-/* Improve horizontal scrolling on very small screens */
 .chart-wrapper {
-  overflow-x: auto;
-  overflow-y: auto;
-  max-height: 500px;
-  min-height: 300px;
+  position: relative;
+  width: 100%;
+  height: 400px; /* Base height */
+  max-height: 80vh;
+  margin: 0 auto;
 }
 
-/* Ensure canvas resizes nicely */
+@media (max-width: 768px) {
+  .chart-wrapper {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-wrapper {
+    height: 220px;
+  }
+}
+
 #featureChart {
   width: 100% !important;
-  min-width: 600px;
-  height: auto !important;
+  height: 100% !important;
+  display: block;
 }
 
-/* Feature name text styling */
+
+/* Chart labels */
 #featureChart text {
-  font-size: 12px;
+  font-size: 13px;
   fill: #202122;
 }
 
@@ -88,26 +102,30 @@
 .btn {
   background-color: #3366cc;
   color: white;
-  padding: 10px 20px;
-  border-radius: 3px;
-  font-size: 0.95rem;
+  padding: 10px 24px;
+  border-radius: 5px;
+  font-size: 1rem;
   text-decoration: none;
   border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
   background-color: #2a4e9c;
 }
 
+/* ===== MEDIA QUERIES ===== */
 @media (max-width: 768px) {
   .docs-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .docs-block h2 {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
 
+  .docs-intro,
   .docs-block p,
   .docs-block ul {
     font-size: 0.95rem;
@@ -117,12 +135,12 @@
     padding: 0 15px;
   }
 
-  .chart-wrapper {
-    max-height: 400px;
+  #featureChart text {
+    font-size: 12px;
   }
 
-  #featureChart text {
-    font-size: 11px;
+  .chart-wrapper {
+    max-height: 400px;
   }
 }
 
@@ -132,9 +150,10 @@
   }
 
   .docs-block h2 {
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 
+  .docs-intro,
   .docs-block p,
   .docs-block ul {
     font-size: 0.9rem;
@@ -142,11 +161,12 @@
 
   .btn {
     font-size: 0.9rem;
-    padding: 8px 16px;
+    padding: 8px 18px;
   }
 
   .chart-wrapper {
     max-height: 300px;
+    padding: 8px;
   }
 
   #featureChart text {
