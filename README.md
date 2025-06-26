@@ -51,8 +51,6 @@ Liver_Cirrhosis/
 │   ├──normalizer.pkl                  # Trained ML models (optional structure)
 │   ├── rf_acc_68.pkl
 │   │
-│   ├── Data/                      # Dataset in Excel format
-│   │   └── liver_dataset.xlsx
 │   │
 │   ├── app.py                     # Flask backend
 │   └── requirements.txt           # Python dependencies
@@ -66,6 +64,8 @@ Liver_Cirrhosis/
 │   ├── Demo.mp4
 │   └── Project_Report.pdf
 │
+├── Data/                   
+│     └── liver_dataset.xlsx
 └── README.md                      # Project documentation
 ```
 
