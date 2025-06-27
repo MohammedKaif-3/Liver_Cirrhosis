@@ -19,7 +19,7 @@
 
 - 🔍 Predicts cirrhosis risk from 20+ clinical inputs
 - 📊 Visualizes feature importance using Chart.js
-- 🧠 Trained Random Forest model with ~68% accuracy
+- 🧠 Trained Random Forest model.
 - ✅ Real-time prediction with color-coded feedback
 - 📱 Fully responsive and mobile-friendly UI
 - 🧪 Auto-fill demo button for quick testing
