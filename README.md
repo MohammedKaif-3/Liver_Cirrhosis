@@ -1,5 +1,5 @@
 
-# 🩺 HepaCheck – Revolutionising Liver Care | Liver Cirrhosis Prediction System
+# <img src="https://github.com/MohammedKaif-3/Liver_Cirrhosis/blob/main/Flask/static/assets/favicon.png" height=50 /> HepaCheck – Revolutionising Liver Care | Liver Cirrhosis Prediction System
 
 **HepaCheck** is a lightweight, responsive AI-powered web application that predicts the risk of liver cirrhosis based on clinical parameters. Designed to assist healthcare professionals and researchers in early-stage detection, it combines machine learning with a simple user interface for quick predictions and interpretability.
 
